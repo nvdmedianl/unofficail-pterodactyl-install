@@ -208,7 +208,7 @@ curl -o /etc/pterodactyl/wings.service https://raw.githubusercontent.com/Nathant
 
 # Create panel database
 mysql -u root panel << EOF
-insert into database_hosts (name,host,port,username,password,node_id) values ('DB01', '127.0.0.1', '3306', '${MYSQL_USER_PANEL}', '${MYSQL_PASSWORD_PANEL}', '1');
+insert into database_hosts (name,host,port,username,password,node_id) values ('MYSQL_DATABASE', '127.0.0.1', '3306', '${MYSQL_USER_PANEL}', '${MYSQL_PASSWORD_PANEL}', '1');
 EOF
 sudo ufw allow 80
 sudo ufw allow 443
