@@ -38,8 +38,6 @@ USER_FIRSTNAME="admin"
 USER_LASTNAME="web"
 USER_PASSWORD="GpOamtPmyu"
 
-#echo "On which domain name should this panel be installed? (FQDN)"
-#read FQDN
 echo "Do you want SSL on this domain? (IPs cannot have SSL!) (y/n)"
 read USE_SSL_CHOICE
 if [ "$USE_SSL_CHOICE" == "y" ]; then
