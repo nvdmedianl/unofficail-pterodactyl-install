@@ -44,6 +44,10 @@ if [ "$USE_SSL_CHOICE" == "y" ]; then
     USE_SSL=true
 elif [ "$USE_SSL_CHOICE" == "Y" ]; then
     USE_SSL=true
+elif [ "$USE_SSL_CHOICE" == "j" ]; then
+    USE_SSL=true
+elif [ "$USE_SSL_CHOICE" == "J" ]; then
+    USE_SSL=true    
 elif [ "$USE_SSL_CHOICE" == "n" ]; then 
     USE_SSL=false
 elif [ "$USE_SSL_CHOICE" == "N" ]; then 
