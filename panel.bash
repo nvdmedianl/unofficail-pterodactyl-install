@@ -121,7 +121,7 @@ y | php artisan migrate --seed --force
 
 # Locations Setup
 # --------------
-php artisan p:location:make --short=MY --long="This server runs in Tilburg"
+php artisan p:location:make --short=NVD-NL --long="This server runs in Tilburg"
 
 # Node Setup
 # ----------
