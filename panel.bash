@@ -176,3 +176,43 @@ fi
 sudo ln -s /etc/nginx/sites-available/pterodactyl.conf /etc/nginx/sites-enabled/pterodactyl.conf
 systemctl restart nginx
 
+# install wings 
+
+curl -sSL https://get.docker.com/ | CHANNEL=stable bash
+systemctl enable --now docker
+mkdir -p /etc/pterodactyl
+curl -L -o /usr/local/bin/wings "https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
+chmod u+x /usr/local/bin/wings
+curl -o /etc/pterodactyl/wings.service https://raw.githubusercontent.com/NathantheDev/unofficail-pterodactyl-install/main/wings.service
+
+mysql -u root panel << EOF
+insert into allocations (node_id,ip,ip_alias,port) values ('1', '${FQDN}', '${FQDN}', '22565');
+EOF
+mysql -u root panel << EOF
+insert into allocations (node_id,ip,ip_alias,port) values ('1', '${FQDN}', '${FQDN}', '22566');
+EOF
+mysql -u root panel << EOF
+insert into allocations (node_id,ip,ip_alias,port) values ('1', '${FQDN}', '${FQDN}', '22567');
+EOF
+mysql -u root panel << EOF
+insert into allocations (node_id,ip,ip_alias,port) values ('1', '${FQDN}', '${FQDN}', '22568');
+EOF
+mysql -u root panel << EOF
+insert into allocations (node_id,ip,ip_alias,port) values ('1', '${FQDN}', '${FQDN}', '22569');
+EOF
+mysql -u root panel << EOF
+insert into allocations (node_id,ip,ip_alias,port) values ('1', '${FQDN}', '${FQDN}', '22570');
+EOF
+# Create panel database
+mysql -u root panel << EOF
+insert into database_hosts (name,host,port,username,password,node_id) values ('DB01', '127.0.0.1', '3306', '${MYSQL_USER_PANEL}', '${MYSQL_PASSWORD_PANEL}', '1');
+EOF
+cat > login.txt
+Pterodactyl URL: ${URL}
+Pterodactyl Gebruikersnaam: ${USER_USERNAME}
+Pterodactyl Wachtwoord: ${USER_PASSWORD}
+MySQL Gebruiker: ${MYSQL_USER}
+MySQL Database: ${MYSQL_DATABASE}
+MySQL Wachtwoord: ${MYSQL_PASSWORD}
+exit 
+
