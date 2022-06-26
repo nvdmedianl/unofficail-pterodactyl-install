@@ -85,7 +85,7 @@ sudo ufw allow 9100
 # Netdata installatiom
 bash <(curl -Ss https://my-netdata.io/kickstart.sh) --non-interactive --stable-channel --disable-telemetry --stable-channel
 
-
+sudo ufw allow 19999
 
 # Example Dependency Installation
 # -------------------------------
@@ -237,6 +237,11 @@ EOF
 mysql -u root panel << EOF
 insert into database_hosts (name,host,port,username,password,node_id) values ('DB01', '127.0.0.1', '3306', '${MYSQL_USER_PANEL}', '${MYSQL_PASSWORD_PANEL}', '1');
 EOF
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 8080
+sudo ufw allow 2022
+
 cat > login.txt
 Pterodactyl URL: ${URL}
 Pterodactyl Gebruikersnaam: ${USER_USERNAME}
