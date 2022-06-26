@@ -165,10 +165,7 @@ curl -o /etc/systemd/system/pteroq.service https://raw.githubusercontent.com/Nat
 sudo systemctl enable --now redis-server
 sudo systemctl enable --now pteroq.service
 
-# Stop & Remove Apache2
-# ----------------------
-systemctl stop apache2
-apt -y remove apache2
+
 systemctl stop nginx
 
 # Creating SSL Certificates
