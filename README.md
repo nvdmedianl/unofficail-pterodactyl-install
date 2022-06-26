@@ -1,5 +1,5 @@
 # pterodactyl-installer
-# :bird: pterodactyl-installer
+#  pterodactyl-installer
 
 Unofficial scripts for installing Pterodactyl Panel & Wings. Works with the latest version of Pterodactyl!
 
@@ -62,13 +62,6 @@ The installation scripts can install and configure a firewall for you. The scrip
 
 If you only want to test a specific distribution,
 
-Replace name with one of the following (supported installations).
+this script has only been tested on Ubuntu 20.02 lts
 
-- `ubuntu_jammy`
-- `ubuntu_focal`
-- `ubuntu_bionic`
-- `debian_bullseye`
-- `debian_buster`
-- `debian_stretch`
-- `centos_8`
-- `centos_7`
+let me know if it works on other operating systems
