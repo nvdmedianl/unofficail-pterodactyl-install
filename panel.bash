@@ -28,15 +28,15 @@ FQDN="${ipaddress}"
 USE_SSL=false
 EMAIL="pterodactyl@nathanvandijk.nl.nl"
 MYSQL_USER="pterodactyl"
-MYSQL_PASSWORD="rwbAiPZ3iv"
+MYSQL_PASSWORD="GpOamtPmyu"
 MYSQL_DATABASE="panel"
 MYSQL_USER_PANEL="pterodactyluser"
-MYSQL_PASSWORD_PANEL="rwbAiPZ3iv"
+MYSQL_PASSWORD_PANEL="GpOamtPmyu"
 USER_EMAIL="admin@gmail.com"
 USER_USERNAME="adminweb"
 USER_FIRSTNAME="admin"
 USER_LASTNAME="web"
-USER_PASSWORD="rwbAiPZ3iv"
+USER_PASSWORD="GpOamtPmyu"
 
 #echo "On which domain name should this panel be installed? (FQDN)"
 #read FQDN
@@ -216,7 +216,8 @@ sudo ufw allow 8080
 sudo ufw allow 2022
 
 cat > login.txt
-Pterodactyl URL: ${URL}
+Pterodactyl URL: ${FQDN}
+Pterodactyl Gebruikersnaam: ${USER_EMAIL}
 Pterodactyl Gebruikersnaam: ${USER_USERNAME}
 Pterodactyl Wachtwoord: ${USER_PASSWORD}
 MySQL Gebruiker: ${MYSQL_USER}
