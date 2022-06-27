@@ -28,25 +28,25 @@ read ipaddress
 echo "Enter your email address here for your eggs added later"
 read mailaddress
 
-echo "enter your superadmin name here"
+echo "Enter your superadmin name here"
 read usernamepanel
 
-echo "enter your superadmin email address here"
+echo "Enter your superadmin email address here"
 read mailadresspanel
 
-echo "enter your superadmin first name here"
+echo "Enter your superadmin first name here"
 read firstnamepanel
 
-echo "Ënter your superadmin last name here"
+echo "Enter your superadmin last name here"
 read lastnamepanel
 
-echo "Ënter your superadmin password here"
+echo "Enter your superadmin password here"
 read passwordpanel
 
-echo "Ënter your mysql end user databse password here"
+echo "Enter your mysql end user databse password here"
 read mysqlpasswordpanel
 
-echo "Ënter your mysql backend user password here"
+echo "Enter your mysql backend user password here"
 read mysqlpasswordbackend
 
 FQDN="${ipaddress}"
