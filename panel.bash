@@ -244,7 +244,7 @@ Pterodactyl Wachtwoord: ${USER_PASSWORD}
 MySQL Gebruiker: ${MYSQL_USER}
 MySQL Database: ${MYSQL_DATABASE}
 MySQL Wachtwoord: ${MYSQL_PASSWORD}
-MySQL Panel Username="pterodactyluser"
+MySQL Panel Username="${MYSQL_USER_PANEL}"
 MySQL Paneel password="${MYSQL_PASSWORD_PANEL}"
 exit 
 
