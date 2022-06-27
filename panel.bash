@@ -25,43 +25,20 @@ apt upgrade -y
 echo "On which domain name should this panel be installed? (FQDN)"
 read ipaddress
 
-echo "Enter your email address here for your eggs added later"
-read mailaddress
-
-echo "Enter your superadmin name here"
-read usernamepanel
-
-echo "Enter your superadmin email address here"
-read mailadresspanel
-
-echo "Enter your superadmin first name here"
-read firstnamepanel
-
-echo "Enter your superadmin last name here"
-read lastnamepanel
-
-echo "Enter your superadmin password here"
-read passwordpanel
-
-echo "Enter your mysql end user databse password here"
-read mysqlpasswordpanel
-
-echo "Enter your mysql backend user password here"
-read mysqlpasswordbackend
 
 FQDN="${ipaddress}"
 USE_SSL=false
-EMAIL="${mailaddress}"
+EMAIL="pterodactyl@nathanvandijk.nl"
 MYSQL_USER="pterodactyl"
-MYSQL_PASSWORD="${mysqlpasswordbackend}"
+MYSQL_PASSWORD="aDau9Z3Hgd"
 MYSQL_DATABASE="panel"
 MYSQL_USER_PANEL="pterodactyluser"
-MYSQL_PASSWORD_PANEL="${mysqlpasswordpanel}"
-USER_EMAIL="${mailaddresspanel}"
-USER_USERNAME="${usernamepanel}"
-USER_FIRSTNAME="${firstnamepanel}"
-USER_LASTNAME="${lastnamepanel}"
-USER_PASSWORD="${passwordpanel}"
+MYSQL_PASSWORD_PANEL="aDau9Z3Hgd"
+USER_EMAIL="adminweb@gmail.com"
+USER_USERNAME="adminweb"
+USER_FIRSTNAME="admim"
+USER_LASTNAME="web"
+USER_PASSWORD="aDau9Z3Hgd"
 
 echo "Do you want SSL on this domain? (IPs cannot have SSL!) (y/n)"
 read USE_SSL_CHOICE
