@@ -84,26 +84,25 @@ fi
 
 # Node exporter
 
-sudo useradd --no-create-home --shell /bin/false node_exporter
+useradd --no-create-home --shell /bin/false node_exporter
 cd /root
 wget https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz
 tar xvf node_exporter-1.0.1.linux-amd64.tar.gz
-sudo cp node_exporter-1.0.1.linux-amd64/node_exporter /usr/local/bin/
-sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
+cp node_exporter-1.0.1.linux-amd64/node_exporter /usr/local/bin/
+chown node_exporter:node_exporter /usr/local/bin/node_exporter
 rm -rf node_exporter-1.0.1.linux-amd64.tar.gz node_exporter-1.0.1.linux-amd64
 cd /etc/systemd/system
 wget https://raw.githubusercontent.com/NathantheDev/unofficail-pterodactyl-install/main/node_exporter.service -O /etc/systemd/system/node_exporter.service
-sudo systemctl daemon-reload
-sudo systemctl start node_exporter
-sudo systemctl enable node_exporter
+systemctl daemon-reload
+systemctl start node_exporter
+systemctl enable node_exporter
 cd /
-sudo systemctl status node_exporter
-sudo ufw allow 9100
+systemctl status node_exporter
+
 
 # Netdata installatiom
 bash <(curl -Ss https://my-netdata.io/kickstart.sh) --non-interactive --stable-channel --disable-telemetry --stable-channel
 
-sudo ufw allow 19999
 
 # Example Dependency Installation
 # -------------------------------
@@ -229,11 +228,13 @@ curl -o /etc/systemd/system/wings.service https://raw.githubusercontent.com/Nath
 systemctl enable --now wings
 
 
-# Create panel database
-sudo ufw allow 80
-sudo ufw allow 443
-sudo ufw allow 8080
-sudo ufw allow 2022
+# Firewall Setup
+ufw allow 80
+ufw allow 443
+ufw allow 8080
+ufw allow 2022
+ufw allow 9100
+ufw allow 19999
 
 cat > login.txt
 Pterodactyl URL: ${FQDN}
@@ -243,5 +244,7 @@ Pterodactyl Wachtwoord: ${USER_PASSWORD}
 MySQL Gebruiker: ${MYSQL_USER}
 MySQL Database: ${MYSQL_DATABASE}
 MySQL Wachtwoord: ${MYSQL_PASSWORD}
+MySQL Panel Username="pterodactyluser"
+MySQL Paneel password="${MYSQL_PASSWORD_PANEL}"
 exit 
 
