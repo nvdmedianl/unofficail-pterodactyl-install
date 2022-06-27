@@ -235,7 +235,7 @@ ufw allow 8080
 ufw allow 2022
 ufw allow 9100
 ufw allow 19999
-
+cd /
 cat > login.txt
 Pterodactyl URL: ${FQDN}
 Pterodactyl Gebruikersnaam: ${USER_EMAIL}
