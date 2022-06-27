@@ -211,16 +211,15 @@ ufw allow 8080
 ufw allow 2022
 ufw allow 9100
 ufw allow 19999
-cd /
-cat > login.txt
-Pterodactyl URL: ${FQDN}
-Pterodactyl Gebruikersnaam: ${USER_EMAIL}
-Pterodactyl Gebruikersnaam: ${USER_USERNAME}
-Pterodactyl Wachtwoord: ${USER_PASSWORD}
-MySQL Gebruiker: ${MYSQL_USER}
-MySQL Database: ${MYSQL_DATABASE}
-MySQL Wachtwoord: ${MYSQL_PASSWORD}
-MySQL Panel Username="${MYSQL_USER_PANEL}"
-MySQL Paneel password="${MYSQL_PASSWORD_PANEL}"
+
+echo Pterodactyl URL: ${FQDN}
+echo Pterodactyl Gebruikersnaam: ${USER_EMAIL}
+echo Pterodactyl Gebruikersnaam: ${USER_USERNAME}
+echo Pterodactyl Wachtwoord: ${USER_PASSWORD}
+echo MySQL Gebruiker: ${MYSQL_USER}
+echo MySQL Database: ${MYSQL_DATABASE}
+echo MySQL Wachtwoord: ${MYSQL_PASSWORD}
+echo MySQL Panel Username="${MYSQL_USER_PANEL}"
+echo MySQL Paneel password="${MYSQL_PASSWORD_PANEL}"
 exit 
 
