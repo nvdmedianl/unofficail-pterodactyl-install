@@ -17,28 +17,46 @@ set -e
 # https://github.com/NathantheDev/unofficail-pterodactyl-install                          #
 #                                                                                         #
 ###########################################################################################
-
-
+echo "        _                     _            _         _   _           _        _ _             _             _   _       _   _                 _   _              _            ";   
+echo " _ __ | |_ ___ _ __ ___   __| | __ _  ___| |_ _   _| | (_)_ __  ___| |_ __ _| | | ___ _ __   | |__  _   _   | \ | | __ _| |_| |__   __ _ _ __ | |_| |__   ___  __| | _____   __";
+echo "| '_ \| __/ _ \ '__/ _ \ / _` |/ _` |/ __| __| | | | | | | '_ \/ __| __/ _` | | |/ _ \ '__|  | '_ \| | | |  |  \| |/ _` | __| '_ \ / _` | '_ \| __| '_ \ / _ \/ _` |/ _ \ \ / /";
+echo "| |_) | ||  __/ | | (_) | (_| | (_| | (__| |_| |_| | | | | | | \__ \ || (_| | | |  __/ |     | |_) | |_| |  | |\  | (_| | |_| | | | (_| | | | | |_| | | |  __/ (_| |  __/\ V / ";
+echo "| .__/ \__\___|_|  \___/ \__,_|\__,_|\___|\__|\__, |_| |_|_| |_|___/\__\__,_|_|_|\___|_|     |_.__/ \__, |  |_| \_|\__,_|\__|_| |_|\__,_|_| |_|\__|_| |_|\___|\__,_|\___| \_/  ";
+echo "|_|                                           |___/                                                |___/                                                                     ";
+echo "                                                                                                                                                                               ";                                                      ";
 apt update
 apt upgrade -y 
 
 echo "On which domain name should this panel be installed? (FQDN)"
 read ipaddress
+read usernamepteromainsql
+read passwordpteromainsql
+read usernamepterousersql
+read passwordpterousersql
+read emailpteroadmin
+read usernamepteroadmim
+read passwordpteroadmin
+read firstnamempteroadmin
+read lastnamempteroadmin
+read emaileggs
+read wingsland
+read wingsdescription
+echo All settings for your account on the panel is now complete 
+
 
 
 FQDN="${ipaddress}"
-USE_SSL=false
-EMAIL="pterodactyl@nathanvandijk.nl"
-MYSQL_USER="pterodactyl"
-MYSQL_PASSWORD="aDau9Z3Hgd"
+EMAIL="${emaileggs}"
+MYSQL_USER="${usernamepteromainsql}"
+MYSQL_PASSWORD="${passwordpteromainsql}"
 MYSQL_DATABASE="panel"
-MYSQL_USER_PANEL="pterodactyluser"
-MYSQL_PASSWORD_PANEL="aDau9Z3Hgd"
-USER_EMAIL="adminweb@gmail.com"
-USER_USERNAME="adminweb"
-USER_FIRSTNAME="admim"
-USER_LASTNAME="web"
-USER_PASSWORD="aDau9Z3Hgd"
+MYSQL_USER_PANEL="${usernamepterousersql}"
+MYSQL_PASSWORD_PANEL="${passwordpterousersql}"
+USER_EMAIL="${emailpteroadmin}"
+USER_USERNAME="${usernamepteroadmim}"
+USER_FIRSTNAME="$firstnamempteroadmin}"
+USER_LASTNAME="${lastnamempteroadmin}"
+USER_PASSWORD="${passwordpteroadmin}"
 
 echo "Do you want SSL on this domain? (IPs cannot have SSL!) (y/n)"
 read USE_SSL_CHOICE
