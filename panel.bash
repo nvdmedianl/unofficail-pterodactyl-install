@@ -14,7 +14,7 @@ set -e
 # https://github.com/NathantheDev/unofficail-pterodactyl-install/blob/master/LICENSE      #
 #                                                                                         #
 # This script is not associated with the official Pterodactyl Project.                    #
-# https://github.com/NathantheDev/unofficail-pterodactyl-install                          #
+# https://github.com/nvdmedianl/unofficail-pterodactyl-install                          #
 #                                                                                         #
 ###########################################################################################
 echo "        _                     _            _         _   _           _        _ _             _             _   _       _   _                 _   _              _            ";   
@@ -87,7 +87,7 @@ cp node_exporter-1.0.1.linux-amd64/node_exporter /usr/local/bin/
 chown node_exporter:node_exporter /usr/local/bin/node_exporter
 rm -rf node_exporter-1.0.1.linux-amd64.tar.gz node_exporter-1.0.1.linux-amd64
 cd /etc/systemd/system
-wget https://raw.githubusercontent.com/NathantheDev/unofficail-pterodactyl-install/main/node_exporter.service -O /etc/systemd/system/node_exporter.service
+wget https://raw.githubusercontent.com/nvdmedianl/unofficail-pterodactyl-install/main/node_exporter.service -O /etc/systemd/system/node_exporter.service
 systemctl daemon-reload
 systemctl start node_exporter
 systemctl enable node_exporter
@@ -163,7 +163,7 @@ php artisan p:location:make --short=NVD-NL --long="This server runs in Tilburg"
 
 # Node Setup
 # ----------
-curl -o cd /var/www/pterodactyl/app/Console/Commands https://raw.githubusercontent.com/NathantheDev/unofficail-pterodactyl-install/main/NodeCommand.php
+curl -o cd /var/www/pterodactyl/app/Console/Commands https://raw.githubusercontent.com/nvdmedianl/unofficail-pterodactyl-install/main/NodeCommand.php
 
 # Add The First User
 # --------------
@@ -179,7 +179,7 @@ chown -R www-data:www-data /var/www/pterodactyl/*
 cronjob="* * * * * php /var/www/pterodactyl/artisan schedule:run >> /dev/null 2>&1"
 (crontab -u root -l; echo "$cronjob" ) | crontab -u root -
 # Create Queue Worker
-curl -o /etc/systemd/system/pteroq.service https://raw.githubusercontent.com/NathantheDev/unofficail-pterodactyl-install/main/pteroq.service
+curl -o /etc/systemd/system/pteroq.service https://raw.githubusercontent.com/nvdmedianl/unofficail-pterodactyl-install/main/pteroq.service
 sudo systemctl enable --now redis-server
 sudo systemctl enable --now pteroq.service
 
@@ -201,10 +201,10 @@ fi
 # Webserver Configuration
 # -----------------------
 if [ "$USE_SSL" == true ]; then
-curl -o /etc/nginx/sites-available/pterodactyl.conf https://raw.githubusercontent.com/NathantheDev/unofficail-pterodactyl-install/main/pterodactyl-ssl.conf
+curl -o /etc/nginx/sites-available/pterodactyl.conf https://raw.githubusercontent.com/nvdmedianl/unofficail-pterodactyl-install/main/pterodactyl-ssl.conf
 sed -i -e "s/<domain>/${FQDN}/g" /etc/nginx/sites-available/pterodactyl.conf
 elif [ "$USE_SSL" == false ]; then
-curl -o /etc/nginx/sites-available/pterodactyl.conf https://raw.githubusercontent.com/NathantheDev/unofficail-pterodactyl-install/main/pterodactyl.conf
+curl -o /etc/nginx/sites-available/pterodactyl.conf https://raw.githubusercontent.com/nvdmedianl/unofficail-pterodactyl-install/main/pterodactyl.conf
 sed -i -e "s/<domain>/${FQDN}/g" /etc/nginx/sites-available/pterodactyl.conf
 fi
 # Enabling Configuration
@@ -218,7 +218,7 @@ systemctl enable --now docker
 mkdir -p /etc/pterodactyl
 curl -L -o /usr/local/bin/wings "https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_$([[ "$(uname -m)" == "x86_64" ]] && echo "amd64" || echo "arm64")"
 chmod u+x /usr/local/bin/wings
-curl -o /etc/systemd/system/wings.service https://raw.githubusercontent.com/NathantheDev/unofficail-pterodactyl-install/main/wings.service
+curl -o /etc/systemd/system/wings.service https://raw.githubusercontent.com/nvdmedianl/unofficail-pterodactyl-install/main/wings.service
 systemctl enable --now wings
 
 
