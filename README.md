@@ -2,8 +2,7 @@
 #  pterodactyl-installer
 
 
-The URL is currently not working.
-We are working on it.
+** The URL is currently not working. We are working on it. **
 
 Unofficial scripts for installing Pterodactyl Panel & Wings. Works with the latest version of Pterodactyl!
 
